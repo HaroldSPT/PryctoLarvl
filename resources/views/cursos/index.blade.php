@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-    <h3 class="text-center">Listado de Cursos Disponibles</h3ñ>
+    <h3 class="text-center">Listado de Cursos Disponibles</h3>
 
     <div class="row">     
     {{-- Foreach es un ciclo o bucle especial para trabajar con arrays --}}
@@ -17,7 +17,8 @@
             <div class="card-body text-center">
             <h5 class="card-title">{{$cursonuevo->nombre}}</h5>
             <p class="card-text">{{$cursonuevo->descripcion}}</p>
-            <a href="" class="btn btn-warning">Ver más</a>
+            {{-- Se necesita el id para ver un registro en particular --}}
+            <a href="/cursos/{{$cursonuevo->id}}" class="btn btn-warning">Ver más</a>
             </div>
         </div>
     </div>
