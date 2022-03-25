@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\storeCursoRequest;
 use App\Models\curso;
 use Illuminate\Http\Request;
 
@@ -39,8 +40,13 @@ class cursoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(storeCursoRequest $request)
+    { 
+        /*$validacionDatos = $request->validate([
+            'nombre'=>'required|max:10',
+            'imagen'=>'required|image'
+        ]);
+        */
         $cursito = new curso();
         //esto me permitirá manipular la tabla
         $cursito->nombre = $request->input('nombre');
@@ -93,7 +99,7 @@ class cursoController extends Controller
         /* con fill lleno todos los campos de la tabla cursos con la info
         que viene desde el request excepto lo que viene desde el input imagen*/
         $cursito->fill($request->except('imagen'));
-        if($cursito->hasFile('imagen')){
+        if($request->hasFile('imagen')){
             $cursito->imagen = $request->file('imagen')->store('public');
         }
         $cursito->save();
