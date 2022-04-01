@@ -29,6 +29,11 @@
     </div>
     <br>
     <div class="form-group">
+        <label for="horas">Horas</label>
+        <input type="number" min="1" name="horas" class="form-control" id="horas">
+    </div>
+    <br>
+    <div class="form-group">
         <label for="imagen">Subir imagen</label>
         <br>
         <input type="file" name="imagen" id="imagen">

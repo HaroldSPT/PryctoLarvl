@@ -12,6 +12,14 @@
         <p class="card-text">{{$docen->curso}}</p>
     </div>
     <a href="/docentes/{{$docen->id}}/edit" class="btn btn-warning">Editar</a>
+    <br>
+    <br>
+    {{--Formulario para botón eliminar--}}
+    <form class="form-group" action="/docentes/{{$docen->id}}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit"  class="btn btn-danger">Eliminar</button>
+    </form>
 </div>
 
 @endsection

@@ -16,7 +16,7 @@
     </div>
     <br>
     <div class="form-group">
-        <label for="apellido">Apellidos del curso</label>
+        <label for="apellido">Apellidos del docente</label>
         <input type="text" name="apellido" value="{{$docen->apellido}}" class="form-control" id="apellido">
     </div>
     <br>
